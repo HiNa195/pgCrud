@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'pgCrud'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_B591AA2E62A648B59E3512C3EF2A332C }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_B6EBE4604DDB4815A4354601B1B6BEB6 }}
           package: .
