@@ -5,6 +5,9 @@ require('dotenv').config();
 // Creating the Express server
 const app = express();
 
+// Add middleware to parse default urlencoded form
+app.use(express.urlencoded({ extended: false }));
+
 // Add database package and connection string (can remove ssl)
 const { Pool } = require('pg');
 const pool = new Pool({
@@ -18,7 +21,9 @@ const pool = new Pool({
 // Server configuration
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static("public/css"));
+// or use
+// app.use(express.static(path.join(__dirname, "public")));
 
 // Starting the server
 app.listen(process.env.PORT || 3000, () => {
